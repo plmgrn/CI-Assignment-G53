@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import filter from '../src/filter.js'
 
+//test helpers for filter.js
+const DEFAULT_PRED = () => x === x
+
+
+
+
+//testing against documentation / blackboxing
 describe('does as the documentation describes', () => {
 
     it('Iterates over elements of `array`, returning an array of all elements `predicate` returns truthy for.', () => {
@@ -27,9 +34,61 @@ describe('does as the documentation describes', () => {
     it('this method returns a new array', () => {
         const original_array = [6,7]
 
+        //filter so that the output array is the same as the original
         const return_array = filter(original_array, (value) => value === value)
+
+        //expect the values of the array to be same
+        expect(return_array).toEqual(original_array)
+
+        //expect the array objects to be different
         expect(return_array).not.toBe(original_array)
+    })
+})
+
+describe('whitebox testing', () =>{
+
+    //@bug this returns array in an array, when supposed to return empty array
+    it('returns an empty array when input is an empty array', ()=> {
+        expect(filter([],DEFAULT_PRED)).toEqual([])
     })
 
 
+})
+
+describe('positive testing', () =>{
+
+    it('returns the correct array', () => {
+        //TODO
+    })
+
+    it('handles predicate logic correctly', () =>{
+        //TODO
+    })
+
+    //TODO more tests that just run the filter function normally
+
+})
+
+describe('handles equivalent inputs equally', () =>{
+    it('functions the same on equivalent input arrays', () =>{
+        const array1 = [1,2,3]
+        const array2 = [1,2,3]
+        expect(array1).toEqual(array2) //gate the testing behind equivalency
+
+        const pred1 = (x) => {x === x-1}
+        const result1 = filter(array1,pred1)
+        const result2 = filter(array2,pred1)
+        expect(result1).toEqual(result2)
+    })
+})
+
+describe('negative testing', () =>{
+
+    it('doesnt throw on empty list', () => {
+        expect(() => filter([],DEFAULT_PRED)).not.toThrow()
+    })
+
+    it('throws on empty predicate', () => {
+        expect(() => filter([1,2,3],)).toThrow('predicate is not a function')
+    })
 })
