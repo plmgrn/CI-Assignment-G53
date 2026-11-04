@@ -107,4 +107,20 @@ describe('mutation testing', () => {
         const output_list = filter(input_list,(x) => x % 2 !== 0)
         expect(input_list).toEqual(original_list)
     })
+
+    it('doesnt touch the original simple predicate', () => {
+        let original_predicate = (x) => {x === x}
+        let input_predicate = original_predicate
+        let input_list = [1,6,7,9]
+        const output_list = filter(input_list,input_predicate)
+        expect(input_predicate).toEqual(original_predicate)
+    })
+
+    it('doesnt touch the original function predicate', () => {
+        let original_predicate = (x) => {x % 2 !== 0}
+        let input_predicate = original_predicate
+        let input_list = [1,6,7,9]
+        const output_list = filter(input_list,input_predicate)
+        expect(input_predicate).toEqual(original_predicate)
+    })
 })
