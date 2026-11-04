@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import filter from '../src/filter.js'
 
 //test helpers for filter.js
-const DEFAULT_PRED = () => x === x
+const DEFAULT_PRED = (x) => {x === x}
 
 
 
@@ -90,5 +90,21 @@ describe('negative testing', () =>{
 
     it('throws on empty predicate', () => {
         expect(() => filter([1,2,3],)).toThrow('predicate is not a function')
+    })
+})
+
+describe('mutation testing', () => {
+    it('doesnt touch the original list with default predicate', () => {
+        let original_list = [1,6,7,9]
+        let input_list = original_list
+        const output_list = filter(input_list,DEFAULT_PRED)
+        expect(input_list).toEqual(original_list)
+    })
+
+    it('doesnt touch the original list with actual predicate', () => {
+        let original_list = [1,6,7,9]
+        let input_list = original_list
+        const output_list = filter(input_list,(x) => x % 2 !== 0)
+        expect(input_list).toEqual(original_list)
     })
 })
