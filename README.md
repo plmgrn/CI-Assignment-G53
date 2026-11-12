@@ -1,3 +1,53 @@
+# TODO
+- [ ] AI generoidut testit
+  - [ ] filter.js
+  - [ ] reduce.js
+
+
+- [ ] filter.js
+  - [x] Black box
+
+  - [ ] White box
+
+  - [ ] Tulostestaus 
+
+      - [ ] Negatiivinen testaus 
+
+      - [ ] Positiivinen testaus 
+
+  - [ ] Syötearvojen testaus 
+
+      - [ ] Huonot syötearvot 
+
+      - [ ] Hyvät syötearvot 
+
+      - [ ] Raja-arvot 
+
+  - [ ] Mutaatioiden tarkastelu 
+
+- [ ] reduce.js
+  - [ ] Black box
+
+  - [ ] White box
+
+  - [ ] Tulostestaus 
+
+      - [ ] Negatiivinen testaus 
+
+      - [ ] Positiivinen testaus 
+
+  - [ ] Syötearvojen testaus 
+
+      - [ ] Huonot syötearvot 
+
+      - [ ] Hyvät syötearvot 
+
+      - [ ] Raja-arvot 
+
+  - [ ] Mutaatioiden tarkastelu 
+
+
+
 # Student template
 
 ## Purpose of this repository
