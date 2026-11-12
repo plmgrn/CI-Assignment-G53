@@ -5,11 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "coverage": "vitest run --coverage --coverage.reporter=lcov --coverage.reporter=text"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@vitest/coverage-v8": "^5.1.0",
     "vitest": "^5.1.0"
   }
 }

@@ -1,3 +1,6 @@
+#### Coveralls garbage bloatware badge
+[![Coverage Status](https://coveralls.io/repos/github/plmgrn/CI-Assignment-G53/badge.svg?branch=main)](https://coveralls.io/github/plmgrn/CI-Assignment-G53?branch=main)
+
 # TODO
 - [ ] AI generoidut testit
   - [ ] filter.js
